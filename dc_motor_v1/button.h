@@ -1,3 +1,4 @@
+#include <stdint.h>
 #ifndef _BUTTON_H
 #define _BUTTON_H
 
@@ -9,7 +10,7 @@ typedef struct{
     unsigned long lastDebounceTime;
     unsigned long debounceDelay;
 }Button;
-extern int motorState;
+extern uint8_t motorState;
 extern void lcdMotorStatus();
 void debounceButton(int reading);
 void initButton();

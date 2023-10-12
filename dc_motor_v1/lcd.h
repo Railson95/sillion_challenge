@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-extern int motorState;
+extern uint8_t motorState;
 void lcdMotorStatus();
 void lcdSetup(); 
 

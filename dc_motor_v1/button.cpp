@@ -1,4 +1,5 @@
 #include "button.h"
+#include "log.h"
 
 Button button;
 
@@ -21,6 +22,7 @@ void debounceButton(int reading) {
       if (button.buttonState == HIGH) {
         motorState = !motorState;
         lcdMotorStatus();
+        // write_log(); TODO: Still doesn't work as expected
       }
     }
   }

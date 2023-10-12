@@ -1,26 +1,27 @@
 #include "button.h"
-#include "lcd.h"
 
-Button::Button(){
-  this->buttonState = LOW;
-  this->lastButtonState = LOW;
-  this->lastDebounceTime = 0;
-  this->debounceDelay = 50;
+Button button;
+
+void initButton(){
+  button.buttonState = LOW;
+  button.lastButtonState = LOW;
+  button.lastDebounceTime = 0;
+  button.debounceDelay = 50;
 }
 
-void Button::debounceButton(int reading, int &motorState, Lcd l) {
-  if (reading != this->lastButtonState) {
-      this->lastDebounceTime = millis();
+void debounceButton(int reading) {
+  if (reading != button.lastButtonState) {
+      button.lastDebounceTime = millis();
   }
-  if (millis() - this->lastDebounceTime > this->debounceDelay) {
-    if (reading != this->buttonState) {
-      this->buttonState = reading;
-      if (this->buttonState == HIGH) {
+  if (millis() - button.lastDebounceTime > button.debounceDelay) {
+    if (reading != button.buttonState) {
+      button.buttonState = reading;
+      if (button.buttonState == HIGH) {
         motorState = !motorState;
-        l.lcdMotorStatus(motorState);
+        lcdMotorStatus();
       }
     }
   }
-  this->lastButtonState = reading;
+  button.lastButtonState = reading;
 }
 

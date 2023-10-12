@@ -6,4 +6,6 @@
 #define MOTOR_PIN 13
 #define BUTTON_PIN 12
 
+int motorState = 0;
+
 #endif

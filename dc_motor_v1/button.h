@@ -2,6 +2,7 @@
 #define _BUTTON_H
 
 #include <Arduino.h>
+#include <assert.h>
 typedef struct{
     int buttonState;
     int lastButtonState;

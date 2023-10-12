@@ -13,7 +13,7 @@ void lcdSetup() {
 }
 
 void lcdMotorStatus() {
-    char *bufferMotorState;
+    static char *bufferMotorState;
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Motor State");

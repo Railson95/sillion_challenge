@@ -10,6 +10,8 @@ void initButton(){
 }
 
 void debounceButton(int reading) {
+  assert(reading >= 0 && reading <= 1);
+
   if (reading != button.lastButtonState) {
       button.lastDebounceTime = millis();
   }

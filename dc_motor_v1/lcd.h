@@ -4,12 +4,8 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-
-class Lcd {
-public:
-    Lcd();
-    void lcdMotorStatus(int motorState);
-    void lcdSetup(int motorState);   
-};
+extern int motorState;
+void lcdMotorStatus();
+void lcdSetup(); 
 
 #endif

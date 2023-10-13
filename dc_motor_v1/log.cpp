@@ -3,11 +3,11 @@
 DataLogger datalogger;
 File dataFile;
 
-void init_log(){
+void initLog(){
   datalogger.line = 0;
 }
 
-void write_log(){
+void writeLog(){
   dataFile = SD.open("myfile.txt", FILE_WRITE);
   // if the file opened okay, write to it:
   if (dataFile) {
@@ -23,7 +23,7 @@ void write_log(){
     while (1);
 }
 
-void init_sd(){
+void initSd(){
   Serial.print("Initializing SD card...");
   if (!SD.begin()) {
     Serial.println("initialization failed!");

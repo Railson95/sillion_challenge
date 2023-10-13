@@ -6,8 +6,8 @@
 void setup() {
   Serial.begin(9600);
   lcdSetup();
-  // init_sd(); # TODO: Still doesn't work as expected
-  init_log();
+  // initSd(); # TODO: Still doesn't work as expected
+  initLog();
   initButton();
   pinMode(MOTOR_PIN, OUTPUT);
   pinMode(BUTTON_PIN, INPUT);

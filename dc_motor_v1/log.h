@@ -10,8 +10,8 @@ typedef struct{
 }DataLogger;
 
 extern uint8_t motorState;
-void write_log();
-void init_sd();
-void init_log();
+void writeLog();
+void initSd();
+void initLog();
 
 #endif

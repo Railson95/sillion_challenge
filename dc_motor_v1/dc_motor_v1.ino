@@ -2,9 +2,10 @@
 #include "lcd.h"
 #include "button.h"
 #include "log.h"
+#define boudRate 9600
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(boudRate);
   lcdSetup();
   // initSd(); # TODO: Still doesn't work as expected
   initLog();

@@ -1,13 +1,15 @@
 #include "button.h"
 #include "log.h"
+#define startLastDebounceTime 0
+#define startDebounceDelay 50
 
 Button button;
 
 void initButton(){
   button.buttonState = LOW;
   button.lastButtonState = LOW;
-  button.lastDebounceTime = 0;
-  button.debounceDelay = 50;
+  button.lastDebounceTime = startLastDebounceTime;
+  button.debounceDelay = startDebounceDelay;
 }
 
 void debounceButton(int reading) {
